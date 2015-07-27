@@ -1,4 +1,4 @@
-# RSS to Jsone
+# RSS to JSON
 
-Convert a Feed Rss into Json and get all images.
+Convert a Feed Rss into JSON and get all images.
 Useful for the  [sketch data populator plugin](https://github.com/preciousforever/sketch-data-populator/)
