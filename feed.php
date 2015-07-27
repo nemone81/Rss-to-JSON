@@ -32,7 +32,7 @@
       $json[$c]['comments'] = $comments;
       $json[$c]['category'] = $category;
       $json[$c]['img_url'] = $img_url;
-      $json[$c]['img'] = basename( $img_url);
+      $json[$c]['img'] = 'assets/'.basename( $img_url);
    }
 
    $zip = new ZipArchive();
@@ -41,13 +41,13 @@
 
    foreach($files as $file){
    $download_file = file_get_contents($file);
-   $zip->addFromString(basename($file),$download_file);
+   $zip->addFromString('assets/'.basename($file),$download_file);
    }
       
    $zip->addFromString('feed.json',utf8_encode(json_encode($json)));
    $zip->close();
 
-   header('Content-disposition: attachment; filename=download.zip');
+   header('Content-disposition: attachment; filename=JSON_feed.zip');
    header('Content-type: application/zip');
    readfile($tmp_file);
 ?>
